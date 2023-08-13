@@ -29,12 +29,11 @@ export class usersController {
 
   @Post()
   async createUser(@Body() Body: IcreateUser) {
-    this.userService.createUser(Body);
+    return this.userService.createUser(Body);
   }
 
   @Put('/:id')
   async updateUser(@Param('id') id: number, @Body() Body: IupdateUser) {
-    console.log(Body);
     return this.userService.IupdateUser(id, Body);
   }
 

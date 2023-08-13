@@ -22,7 +22,6 @@ export class usersRepository {
   }
 
   async getUser(id: number) {
-    console.log(id);
     try {
       const data = await fetch('https://jsonplaceholder.typicode.com/users');
 
@@ -65,7 +64,6 @@ export class usersRepository {
       if (Body.name && Body.username) {
         filterdData[0].name = Body.name;
         filterdData[0].username = Body.username;
-        console.log(filterdData);
         return filterdData;
       }
 
