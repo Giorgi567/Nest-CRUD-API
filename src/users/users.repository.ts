@@ -57,8 +57,8 @@ export class usersRepository {
         (user) => String(user.id) === String(id),
       );
 
-      if (!filterdData) {
-        throw new Error(`User with id of ${id} does not exists`);
+      if (!filterdData[0]) {
+        return `User with id of "${id}" does not exists`;
       }
 
       if (Body.name && Body.username) {
@@ -77,6 +77,7 @@ export class usersRepository {
         return filterdData;
       }
 
+      return 'You can not update anything but name and username';
       //implemented update like this because i dont use database for this mini nest project
     } catch (err) {
       console.log(err);
